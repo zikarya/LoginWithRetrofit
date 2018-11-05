@@ -33,8 +33,8 @@ public class UserActivity extends AppCompatActivity {
         final TextView tvName = (TextView) findViewById(R.id.name);
         final TextView tvCompany = (TextView)findViewById(R.id.company);
         SharedPreferences userDetails = this.getSharedPreferences("userdetails", MODE_PRIVATE);
-        getSharedPreferences(Name, userDetails.getString(Name, ""));
-        tvName.setText()
+      //  getSharedPreferences(Name, userDetails.getString(Name, ""));
+        //tvName.setText()
         tvCompany.setText(user.getCompanyName());
         final Button logoutButton = (Button) findViewById(R.id.logoutButton);
         final TabLayout userTabLayout = (TabLayout) findViewById(R.id.userTabs);
