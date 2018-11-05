@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">City Hygiene</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="company_name">City Hygiene</string>
+    <string name="reg_details">Request Login Details</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="logout">LogOut</string>
+    <string name="change_password">ChangePassword</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

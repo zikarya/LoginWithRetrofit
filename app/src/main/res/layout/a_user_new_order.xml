@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:paddingLeft="10dp"
+    android:paddingRight="50dp"
+    android:paddingTop="10dp">
+
+    <ImageButton
+        android:id="@+id/add_attendee_button"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:contentDescription="add"
+        android:labelFor="@+id/add_attendee_button"
+        android:tint="@color/colorAccent" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="contacts" />
+
+    <LinearLayout
+        android:id="@+id/attending_button_layout"
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+</LinearLayout>
