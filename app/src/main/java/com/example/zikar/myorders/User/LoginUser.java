@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.zikar.myorders.R;
-import com.example.zikar.myorders.Utils.ApiClient;
+import com.example.zikar.myorders.Utils.ApiClientUsersDB;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -41,7 +41,6 @@ import static com.example.zikar.myorders.Utils.Constants.Pwd;
 
 public class LoginUser extends AppCompatActivity{
     Context context;
-    SharedPreferences sharedpreferences;
     String e ;
     String pwd ;
 
@@ -56,13 +55,12 @@ public class LoginUser extends AppCompatActivity{
     }
 
     private void login(){
-        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         //SET LISTENER TO THE LOGIN BUTTON
         findViewById(R.id.login_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validateForm();
-                ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+                ApiInterface apiInterface = ApiClientUsersDB.getClient().create(ApiInterface.class);
                 Map<String,String> searchFilters = new HashMap<>();
                 searchFilters.put("email",e);
                 searchFilters.put("pwd",pwd);
@@ -77,7 +75,7 @@ public class LoginUser extends AppCompatActivity{
                                             .toString();
                             User loggedIn = (new Gson()).fromJson(loggedInString, User.class);
                             setSharedPref(loggedIn);
-                            Intent in = new Intent(context,UserActivity.class);
+                            Intent in = new Intent(context,UserLoggedIn.class);
                             startActivity(in);
                         } catch (JSONException e2) {
                             e2.printStackTrace();
@@ -113,7 +111,7 @@ public class LoginUser extends AppCompatActivity{
     }
 
     private void setSharedPref(User user){
-        SharedPreferences loggedInUserSP = context.getSharedPreferences("user",MODE_PRIVATE);
+        SharedPreferences loggedInUserSP = getSharedPreferences(MyPREFERENCES,MODE_PRIVATE);
         SharedPreferences.Editor edit = loggedInUserSP.edit();
         edit.putString(Email, user.getEmailAddress());
         edit.putString(Pwd, user.getPwd());

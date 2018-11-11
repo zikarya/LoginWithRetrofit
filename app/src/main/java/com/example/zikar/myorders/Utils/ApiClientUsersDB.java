@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.example.zikar.myorders.Utils.Constants.BASE_URL;
 
-public class ApiClient {
+public class ApiClientUsersDB {
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

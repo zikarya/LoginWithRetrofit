@@ -10,8 +10,8 @@
     <string name="login">Login</string>
     <string name="logout">LogOut</string>
     <string name="change_password">ChangePassword</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="submit_order">Submit Order</string>
+    <string name="contacts">contacts</string>
+    <string name="add">add</string>
+    <string name="request_sent_to_admin">request sent to admin</string>
 </resources>

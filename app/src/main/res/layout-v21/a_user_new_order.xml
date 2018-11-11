@@ -4,24 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
-    android:paddingLeft="10dp"
-    android:paddingRight="50dp"
+    android:paddingStart="10dp"
+    android:paddingEnd="50dp"
     android:paddingTop="10dp">
 
-    <ImageButton
-        android:id="@+id/add_attendee_button"
-        android:layout_width="50dp"
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:contentDescription="add"
-        android:labelFor="@+id/add_attendee_button"
-        android:tint="@color/colorAccent" />
+        android:background="@drawable/button_selector"
+        android:text="@string/submit_order" />
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="contacts" />
+        android:text="@string/contacts" />
 
     <LinearLayout
         android:id="@+id/attending_button_layout"

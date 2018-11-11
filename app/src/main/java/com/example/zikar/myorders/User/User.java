@@ -1,5 +1,7 @@
 package com.example.zikar.myorders.User;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -11,6 +13,16 @@ import com.google.gson.JsonParser;
 import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONObject;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.example.zikar.myorders.Utils.Constants.Access;
+import static com.example.zikar.myorders.Utils.Constants.Company;
+import static com.example.zikar.myorders.Utils.Constants.Email;
+import static com.example.zikar.myorders.Utils.Constants.ID;
+import static com.example.zikar.myorders.Utils.Constants.MyPREFERENCES;
+import static com.example.zikar.myorders.Utils.Constants.Name;
+import static com.example.zikar.myorders.Utils.Constants.OrderCount;
+import static com.example.zikar.myorders.Utils.Constants.Phone;
 
 public class User implements Parcelable {
         private int userId;
@@ -101,4 +113,15 @@ public class User implements Parcelable {
         public String getCompanyName(){return this.companyName;}
         public int getCurrentOrderCount(){return this.currentOrderCount;}
 
-}
+        public User getLoggedInUser(Context c) {
+            SharedPreferences loggedIn = c.getSharedPreferences(MyPREFERENCES, MODE_PRIVATE);
+            User loggedInUser = new User(loggedIn.getInt(ID, 0),
+                    loggedIn.getString(Name, ""),
+                    loggedIn.getString(Company, ""),
+                    loggedIn.getString(Phone, ""),
+                    loggedIn.getString(Email, ""), "",
+                    loggedIn.getString(Access, ""),
+                    loggedIn.getInt(OrderCount, 0));
+            return loggedInUser;
+        }
+    }

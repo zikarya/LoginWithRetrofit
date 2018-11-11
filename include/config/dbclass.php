@@ -1,9 +1,9 @@
 <?php
 class DBClass {
-    private $host = 'db759501955.hosting-data.io';
-    private $username = "dbo759501955";
-    private $password = "db759501955";
-    private $database = "P@55word";
+    private $host = '**********';
+    private $username = "*******";
+    private $password = "****";
+    private $database = "******";
 
     public $connection;
 

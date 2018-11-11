@@ -14,4 +14,10 @@ import retrofit2.http.QueryMap;
 public interface ApiInterface {
     @GET("/users/login")
     Call<ResponseBody> userLogin(@QueryMap Map<String, String> filters);
+
+    @GET("users/register")
+    Call<ResponseBody> userRegister(@QueryMap Map<String, String> filters);
 }
+
+
+//TODO: implement USERS/register

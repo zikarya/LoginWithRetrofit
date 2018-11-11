@@ -7,19 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.zik.orders.Objects.StockItem;
-import com.example.zik.orders.R;
+import com.example.zikar.myorders.Objects.StockItem;
+import com.example.zikar.myorders.R;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-
         private static ListItemClickListener contactSelectListener;
         private Cursor contactCursor;
         private ArrayList<StockItem> selected;
-
-
     public interface ListItemClickListener {
             void onListItemClick(int clickedIndex, boolean isChecked);
         }
